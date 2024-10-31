@@ -1,4 +1,6 @@
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Filme;
+import br.com.alura.screenmatch.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
@@ -14,5 +16,18 @@ public class Principal {
         filme1.avalia(5);
         System.out.printf("Média: %.1f", filme1.pegaMedia());
         System.out.printf("\nTotal de avaliações: " + filme1.getTotalDeAvaliacoes());
+
+        Serie serie1 = new Serie();
+        serie1.setNome("Sienfield");
+        serie1.setAnoDeLancamento(1989);
+        serie1.exibeFichaTecnica();
+        serie1.setTemporadas(9);
+        serie1.setMinutosPorEpisodio(22);
+        serie1.setEpisodiosPorTemporada(8);
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.incluiNaCalculadora(filme1);
+        calculadora.incluiNaCalculadora(serie1);
+        System.out.println("Total de tempo necessário: " + calculadora.getTempoTotal() + " minutos");
     }
 }
