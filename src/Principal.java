@@ -8,10 +8,8 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme filme1 = new Filme();
-        filme1.setNome("La La Land");
+        Filme filme1 = new Filme("La La Land",2017);
         filme1.setIncluidoNoPlano(true);
-        filme1.setAnoDeLancamento(2017);
         filme1.setDuracaoEmMinutos(128);
         filme1.exibeFichaTecnica();
         filme1.avalia(10);
@@ -23,9 +21,7 @@ public class Principal {
         filtro.filtra(filme1);
         System.out.println("\n");
 
-        Serie serie1 = new Serie();
-        serie1.setNome("Sienfield");
-        serie1.setAnoDeLancamento(1989);
+        Serie serie1 = new Serie("Sienfield", 1989);
         serie1.exibeFichaTecnica();
         serie1.setTemporadas(9);
         serie1.setMinutosPorEpisodio(22);
@@ -37,16 +33,13 @@ public class Principal {
         calculadora.incluiNaCalculadora(serie1);
         System.out.println("Total de tempo necessário: " + calculadora.getTempoTotal() + " minutos");
 
-        Episodio episodio = new Episodio();
+        Episodio episodio = new Episodio("rsrsrs",1989 ,serie1);
         episodio.setId(1);
-        episodio.setSerie(serie1);
         episodio.setTotalDeVisualizacoes(20);
         System.out.println("\n");
 
-        var filme2 = new Filme();
-        filme2.setNome("Esqueceram de Mim");
+        var filme2 = new Filme("Esqueceram de Mim", 1990);
         filme2.setIncluidoNoPlano(true);
-        filme2.setAnoDeLancamento(1990);
         filme2.setDuracaoEmMinutos(103);
         filme2.exibeFichaTecnica();
         filme2.avalia(10);

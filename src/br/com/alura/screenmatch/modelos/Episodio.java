@@ -8,6 +8,10 @@ public class Episodio extends Titulo implements Classificavel {
     private Serie serie;
     private int totalDeVisualizacoes;
 
+    public Episodio(String nome, int anoDeLancamento, Serie serie) {
+        super(nome, anoDeLancamento);
+        this.serie = serie;
+    }
 
     public String getNome() {
         return nome;
