@@ -5,6 +5,9 @@ import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class PrincipalComLista {
     public static void main(String[] args) {
@@ -15,9 +18,7 @@ public class PrincipalComLista {
         Serie serie1 = new Serie("Sienfield", 1989);
         var filme3 = new Filme("Esqueceram de Mim", 1990);
         filme3.avalia(6);
-        ArrayList<Titulo> lista = new ArrayList<>();
-        Filme referenciaFilme = filme1;
-        lista.add(referenciaFilme);
+        List<Titulo> lista = new ArrayList<>();
         lista.add(filme1);
         lista.add(filme2);
         lista.add(filme3);
@@ -30,10 +31,10 @@ public class PrincipalComLista {
             }
         }
 
-//        if(referenciaFilme == filme1) {
-//            System.out.println("Iguais");
-//        } else {
-//            System.out.println("Diferentes");
-//        }
+        System.out.println("Lista original: \n" + lista + "\n");
+        Collections.sort(lista);
+        System.out.println("Lista ordenada: \n" + lista + "\n");
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Lista ordenada por Ano de Lançamento: \n" + lista + "\n");
     }
 }
